@@ -3,22 +3,22 @@
 ## Requirements
 
 1. **CRM Module Extension**
-   [X] Implement an extension that allows registering URLs for the following social accounts for each customer:
-     [X] Facebook
-     [X] LinkedIn
-     [X] Twitter
+   - [X] Implement an extension that allows registering URLs for the following social accounts for each customer:
+     - [X] Facebook
+     - [X] LinkedIn
+     - [X] Twitter
 
 2. **Social Networks Tab**
-   [X] Display social networks in a separate tab in the customer profile
-   [X] Each social network should have its corresponding icon
+   - [X] Display social networks in a separate tab in the customer profile
+   - [X] Each social network should have its corresponding icon
 
 3. **Completed Profile Indicator**
-   [X] When a customer has all social networks registered, mark it as a "completed profile"
-   [X] Show an image with a checkmark "Profile complete"
-   - This information should be visible from all customer views
+   - [X] When a customer has all social networks registered, mark it as a "completed profile"
+   - [X] Show an image with a checkmark "Profile complete"
+   - [X] This information should be visible from all customer views
 
 4. **Profile Filtering**
-   - Add a filter that shows "Profile incomplete" customers
+   - [X] Add a filter that shows "Profile incomplete" customers
 
 5. **Customer Promotion Page**
    - Add a website page dedicated to promoting customers

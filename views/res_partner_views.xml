@@ -10,33 +10,27 @@
             <notebook position="inside">
                 <page string="Social Networks" name="social_networks">
                     <group>
-                        <field name="social_facebook" widget="url"/>
-                        <field name="social_linkedin" widget="url"/>
-                        <field name="social_twitter" widget="url"/>
+                        <field class="fa fa-facebook rounded" name="social_facebook" widget="url"/>
+                        <field class="fa fa-linkedin rounded" name="social_linkedin" widget="url"/>
+                        <field class="fa fa-twitter rounded" name="social_twitter" widget="url"/>
                         <field name="has_complete_profile" invisible="True"/>
                     </group>
-                    <div invisible="has_complete_profile">
-                        <div class="alert alert-success" role="alert">
-                            <img src="/ce_odoo_excercise/static/description/check.png" width="24" height="24" alt="Check" class="mr-2"/>
-                            <span>Profile complete</span>
-                        </div>
+                    <div class="alert alert-success" role="alert" invisible="not has_complete_profile">
+                        <i class="fa fa-check-circle mr-2" style="padding: 5px; font-size: 18px;"></i>
+                        <span>Profile complete</span>
                     </div>
                 </page>
             </notebook>
-            
+
             <!-- Add profile complete indicator in header -->
             <div name="button_box" position="inside">
-                <button 
-                    class="oe_stat_button" 
-                    icon="fa-check-circle" 
-                    invisible="has_complete_profile"
-                    disabled="1">
+                <button class="oe_stat_button" icon="fa-check-circle" invisible="has_complete_profile" disabled="1">
                     <field name="has_complete_profile" widget="boolean_button" options="{'terminology': 'profile'}"/>
                 </button>
             </div>
         </field>
     </record>
-    
+
     <!-- Add filter for incomplete profiles in partner search view -->
     <record id="view_res_partner_filter_inherit_social" model="ir.ui.view">
         <field name="name">res.partner.select.inherit.social</field>
@@ -48,7 +42,7 @@
             </filter>
         </field>
     </record>
-    
+
     <!-- Add social network indicators in tree view -->
     <record id="view_partner_tree_inherit_social" model="ir.ui.view">
         <field name="name">res.partner.tree.inherit.social</field>
@@ -56,7 +50,18 @@
         <field name="inherit_id" ref="base.view_partner_tree"/>
         <field name="arch" type="xml">
             <field name="email" position="after">
-                <field name="has_complete_profile" widget="boolean_toggle"/>
+                <field name="has_complete_profile" string="Complete Profile" widget="boolean_toggle"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_partner_kanban_inherit_social" model="ir.ui.view">
+        <field name="name">res.partner.kanban.inherit.social</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+        <field name="arch" type="xml">
+            <field name="email" position="after">
+                <i invisible="not has_complete_profile">Profile Complete</i>
             </field>
         </field>
     </record>
