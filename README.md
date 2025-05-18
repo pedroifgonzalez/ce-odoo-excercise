@@ -21,13 +21,13 @@
    - [X] Add a filter that shows "Profile incomplete" customers
 
 5. **Customer Promotion Page**
-   - Add a website page dedicated to promoting customers
-   - Show a list of customers with brief information about each one
-   - Include their social accounts data
+   - [X] Add a website page dedicated to promoting customers
+   - [X] Show a list of customers with brief information about each one
+   - [X] Include their social accounts data
 
 6. **Search Functionality**
-   - Implement search on the promotion page
-   - Allow finding customers by name and social accounts
+   - [X] Implement search on the promotion page
+   - [X] Allow finding customers by name and social accounts
 
 7. **Compatibility**
    - Must be compatible with Odoo 13+

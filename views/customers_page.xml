@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Customer Promotion Page Template -->
+    <template id="customers_page" name="Our Customers">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure">
+                <section class="s_title pt32 pb32" data-name="Title">
+                    <div class="container">
+                        <h1 class="text-center">Our Customers</h1>
+                        <div class="row">
+                            <div class="col-lg-8 offset-lg-2 pt16 pb16">
+                                <p class="text-center">Discover our valued customers and their social presence</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Search Form -->
+                <div class="container mb32">
+                    <form action="/our-customers" method="get" class="form-inline justify-content-center">
+                        <div class="input-group">
+                            <input type="text" name="search" class="form-control" placeholder="Search customers..." t-att-value="search"/>
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Customer Cards -->
+                <div class="container">
+                    <div class="row">
+                        <t t-foreach="partners" t-as="partner">
+                            <div class="col-md-4 mb-4">
+                                <div class="card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">
+                                            <t t-esc="partner.name"/>
+                                        </h5>
+                                        <p class="card-text" t-if="partner.comment">
+                                            <t t-esc="partner.comment[:150] + '...' if len(partner.comment or '') > 150 else partner.comment"/>
+                                        </p>
+                                        <div class="social-links mt-3">
+                                            <t t-if="partner.social_facebook">
+                                                <a t-att-href="partner.social_facebook" target="_blank" class="btn btn-sm btn-outline-primary mr-2">
+                                                    <i class="fa fa-facebook"/> Facebook
+                                                </a>
+                                            </t>
+                                            <t t-if="partner.social_linkedin">
+                                                <a t-att-href="partner.social_linkedin" target="_blank" class="btn btn-sm btn-outline-primary mr-2">
+                                                    <i class="fa fa-linkedin"/> LinkedIn
+                                                </a>
+                                            </t>
+                                            <t t-if="partner.social_twitter">
+                                                <a t-att-href="partner.social_twitter" target="_blank" class="btn btn-sm btn-outline-primary">
+                                                    <i class="fa fa-twitter"/> Twitter
+                                                </a>
+                                            </t>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </div>
+                    
+                    <!-- No Results Message -->
+                    <div t-if="not partners" class="alert alert-info text-center">
+                        <p>No customers found. Try a different search term or check back later.</p>
+                    </div>
+                    
+                    <!-- Pager -->
+                    <div class="row mt32 mb32">
+                        <div class="col-12">
+                            <t t-call="website.pager"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    
+    <!-- Add menu item for the customer promotion page -->
+    <record id="menu_customers_page" model="website.menu">
+        <field name="name">Our Customers</field>
+        <field name="url">/our-customers</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">50</field>
+    </record>
+</odoo>

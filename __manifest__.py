@@ -21,7 +21,7 @@
     "data": [
         "security/ir.model.access.csv",
         "views/res_partner_views.xml",
-        "views/templates.xml",
+        "views/customers_page.xml",
     ],
     "qweb": [],
     "images": ["static/description/icon.png"],
