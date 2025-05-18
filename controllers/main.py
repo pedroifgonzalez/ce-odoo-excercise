@@ -117,4 +117,4 @@ class CustomerPromotion(http.Controller):
         values = self._prepare_customer_values(partners, pager, search)
 
         # Render template
-        return request.render("ce-odoo-excercise.customers_page", values)
+        return request.render("ce_odoo_excercise.customers_page", values)

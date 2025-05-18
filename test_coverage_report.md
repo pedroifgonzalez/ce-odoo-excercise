@@ -40,13 +40,13 @@ To run the tests and generate coverage:
 
 ```bash
 cd /path/to/odoo
-./odoo-bin -d your_database --test-enable --log-level=test --stop-after-init -i ce-odoo-excercise
+./odoo-bin -d your_database --test-enable --log-level=test --stop-after-init -i ce_odoo_excercise
 ```
 
 For coverage report:
 
 ```bash
-coverage run --source=./odoo-practice-addons/ce-odoo-excercise ./odoo-bin -d your_database --test-enable --stop-after-init -i ce-odoo-excercise
+coverage run --source=./odoo-practice-addons/ce_odoo_excercise ./odoo-bin -d your_database --test-enable --stop-after-init -i ce_odoo_excercise
 coverage report -m
 coverage html  # Generates HTML report in htmlcov/
 ```

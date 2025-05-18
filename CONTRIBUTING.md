@@ -58,7 +58,7 @@ To run the tests for this module:
 
 ```bash
 cd /path/to/odoo
-./odoo-bin -d your_database --test-enable --log-level=test --stop-after-init -i ce-odoo-excercise
+./odoo-bin -d your_database --test-enable --log-level=test --stop-after-init -i ce_odoo_excercise
 ```
 
 ### Writing Tests
@@ -82,7 +82,7 @@ We aim for at least 80% test coverage. To generate a coverage report:
 
 2. Run tests with coverage:
    ```bash
-   coverage run --source=./odoo-practice-addons/ce-odoo-excercise ./odoo-bin -d your_database --test-enable --stop-after-init -i ce-odoo-excercise
+   coverage run --source=./odoo-practice-addons/ce_odoo_excercise ./odoo-bin -d your_database --test-enable --stop-after-init -i ce_odoo_excercise
    ```
 
 3. Generate a report:
