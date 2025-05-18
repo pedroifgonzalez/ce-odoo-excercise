@@ -22,6 +22,10 @@
         "views/res_partner_views.xml",
         "views/customers_page.xml",
     ],
+    "test": [
+        "tests/test_res_partner.py",
+        "tests/test_controllers.py",
+    ],
     "qweb": [],
     "images": ["static/description/icon.png"],
     "installable": True,

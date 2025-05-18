@@ -32,6 +32,11 @@
 7. **Compatibility**
    - Must be compatible with Odoo 13+
 
+8. **Must include (You do not pass the test if this is not shown)**
+   - [X] Unit tests
+   - [X] Proper Git usage
+   - [X] Report on test coverage
+
 ## Installation
 
 1. Download the module and place it in your addons folder
@@ -43,11 +48,7 @@
 
 Before using this module in production, you need to:
 
-1. Add proper images for the module:
-   - `/static/description/icon.png` - Module icon
-   - `/static/description/check.png` - Checkmark icon for complete profiles
-
-2. Test the module with your specific Odoo version to ensure compatibility
+1. Test the module with your specific Odoo version to ensure compatibility
 
 ## Features
 

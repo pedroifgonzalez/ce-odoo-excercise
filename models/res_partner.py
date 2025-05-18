@@ -22,6 +22,7 @@ class ResPartner(models.Model):
     def _compute_has_complete_profile(self):
         """Compute if the partner has all social networks filled"""
         for partner in self:
+            partner._validate_social_network_url()
             partner.has_complete_profile = all(
                 [
                     partner.social_facebook,
