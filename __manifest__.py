@@ -19,7 +19,6 @@
         "contacts",
     ],
     "data": [
-        "security/ir.model.access.csv",
         "views/res_partner_views.xml",
         "views/customers_page.xml",
     ],
